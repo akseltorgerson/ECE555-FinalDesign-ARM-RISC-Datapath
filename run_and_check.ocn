@@ -1,0 +1,23 @@
+simulator( 'spectre )
+design( "/filespace/a/atorgerson/cadence/simulation/datapath_tb/spectre/schematic/netlist/netlist")
+resultsDir( "/filespace/a/atorgerson/cadence/simulation//spectre/schematic")
+modelFile(
+    '("/filespace/a/atorgerson/ece555/cadence/modelfile18" "")
+)
+stimulusFile( ?xlate nil
+    "/filespace/a/atorgerson/Desktop/FinalProject(0.521 at 250)(max 529)/vectors.stim"
+)
+analysis('tran ?stop "14n" ?errpreset "moderate" )
+envOption(
+		'analysisOrder list("tran")
+		'switchViewList '( "spectre cmos_sch cmos.sch extracted schematic" )
+)
+save( 'v "/clk" "/dst<15>" "/dst<14>" "/dst<13>" "/dst<12>" "/dst<11>" "/dst<10>" "/dst<9>" "/dst<8>" "/dst<7>" "/dst<6>" "/dst<5>" "/dst<4>" "/dst<3>" "/dst<2>" "/dst<1>" "/dst<0>" "/cout" )
+save( 'i "/V0/PLUS" )
+temp( 27 )
+createNetlist()
+run()
+selectResults("tran")
+ocnPrint(?output "cadence/simulation/sim_out.txt" ?precision 16 ?numberNotation `scientific v("/clk") v("/dst<15>") v("/dst<14>") v("/dst<13>") v("/dst<12>") v("/dst<11>") v("/dst<10>") v("/dst<9>") v("/dst<8>") v("/dst<7>") v("/dst<6>") v("/dst<5>") v("/dst<4>") v("/dst<3>") v("/dst<2>") v("/dst<1>") v("/dst<0>") v("/cout") i("/V0/PLUS") ?step 0.025n)
+id=ipcBeginProcess("~ejhoffman/perl_progs/check_res_pls.pl datapath_tb")
+ipcWaitForChild(id)

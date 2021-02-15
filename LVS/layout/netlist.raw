@@ -1,0 +1,14 @@
+
+n 0 /4
+n 1 /3
+n 2 /2
+n 3 /1
+
+; pmos4 Instance /+1 = auLvs device Q0
+d pmos D G S B (p D S)
+i 0 pmos 1 0 3 3 " m 1 l 180e-9 w 405e-9 "
+
+; nmos4 Instance /+0 = auLvs device Q1
+d nmos D G S B (p D S)
+i 1 nmos 1 0 2 2 " m 1 l 180e-9 w 270e-9 "
+

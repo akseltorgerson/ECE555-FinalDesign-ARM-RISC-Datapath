@@ -1,0 +1,3 @@
+SOFTINCLUDE /cae/apps/data/cadence-2020/installs/IC618/share/cdssetup/cds.lib
+#Removed by ddDeleteObj: DEFINE ece555 /filespace/a/atorgerson/ece555/cadence/ece555
+DEFINE ece555lib /filespace/a/atorgerson/ece555/cadence/ece555lib

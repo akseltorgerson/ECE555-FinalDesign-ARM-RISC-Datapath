@@ -1,0 +1,14 @@
+t 4 IN input
+t 5 OUT output
+n 1 vdd!
+n 0 vss!
+n 4 /IN
+n 5 /OUT
+; nmos4 Instance /N0 = auLvs device Q0
+d nmos D G S B (p D S)
+i 0 nmos 5 4 0 0 " m 1 l 180e-9 w 270e-9 "
+; pmos4 Instance /P0 = auLvs device Q1
+d pmos D G S B (p D S)
+i 1 pmos 5 4 1 1 " m 1 l 180e-9 w 405e-9 "
+t 0 vss! global
+t 1 vdd! global
